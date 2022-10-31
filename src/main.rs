@@ -178,24 +178,38 @@ impl Display for Node {
 fn main() {
     let node1 = Node::new(1);
     let node2 = Node::new(2);
+    let node3 = Node::new(3);
+    let node4 = Node::new(4);
 
     let edge1 = Edge::new(1, node2.clone());
-    let edge2 = Edge::new(2, node1.clone());
+    let edge2 = Edge::new(1, node3.clone());
+    let edge3 = Edge::new(3, node3.clone());
+    let edge4 = Edge::new(5, node1.clone());
+    let edge5 = Edge::new(2, node1.clone());
 
-    node1.remove_edge(edge1.clone());
-    print!("-----------------------\n");
-    println!("{}", node1);
-    node1.add_edge(edge1.clone());
-    print!("-----------------------\n");
-    println!("{}", node1);
-    edge1.change_node_ptr(node1.clone());
-    println!("{}", node1);
-    print!("-----------------------\n");
 
-    let vecto = (1..10).collect::<Vec<_>>();
-    vecto
-        .iter()
-        .filter(|&&number| number > 5)
-        .collect::<Vec<_>>();
-    println!("{:?}", vecto);
+    node1.add_edge(edge1);
+    node1.add_edge(edge2);
+
+    node2.add_edge(edge3);
+    node2.add_edge(edge4)
+
+
+    // node1.remove_edge(edge1.clone());
+    // print!("-----------------------\n");
+    // println!("{}", node1);
+    // node1.add_edge(edge1.clone());
+    // print!("-----------------------\n");
+    // println!("{}", node1);
+    // edge1.change_node_ptr(node1.clone());
+    // println!("{}", node1);
+    // print!("-----------------------\n");
+
+    // let vecto = (1..10).collect::<Vec<_>>();
+    // vecto
+    //     .iter()
+    //     .filter(|&&number| number > 5)
+    //     .collect::<Vec<_>>();
+    // println!("{:?}", vecto);
+
 }
